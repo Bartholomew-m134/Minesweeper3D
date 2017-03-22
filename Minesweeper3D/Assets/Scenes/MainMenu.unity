@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -616,6 +616,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 554270941}
+        m_MethodName: LaunchNew3DGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &252006767
@@ -754,6 +765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554270939}
   - component: {fileID: 554270940}
+  - component: {fileID: 554270941}
   m_Layer: 0
   m_Name: Menus
   m_TagString: Untagged
@@ -792,6 +804,18 @@ MonoBehaviour:
   mainMenu: {fileID: 585555736}
   playMenu: {fileID: 61014142}
   aboutMenu: {fileID: 417794359}
+--- !u!114 &554270941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554270938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59776bd355c35344a84f5a2fdf74bbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playMenu: {fileID: 61014142}
 --- !u!1 &585555736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1121,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd98f5fd20a2f614596e15ed41d74380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &668268611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668268605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8513974a03283d34eb8f5ae4fd598ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &813807996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,17 +1206,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 813807996}
---- !u!114 &668268611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 668268605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8513974a03283d34eb8f5ae4fd598ac8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &818084156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,8 +1981,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 554270940}
-        m_MethodName: GoToPlayMenu
+      - m_Target: {fileID: 554270941}
+        m_MethodName: LaunchNew2DGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
