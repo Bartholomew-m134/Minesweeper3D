@@ -12,6 +12,6 @@ public class PlayMenuBehavior : MonoBehaviour {
     }
 
     public void LaunchNew3DGame() {
-        SceneManager.LoadScene("Minesweeper");
+        SceneManager.LoadScene("Minesweeper3D");
     }
 }
