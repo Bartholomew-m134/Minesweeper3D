@@ -17,6 +17,7 @@ public class MinesweeperManager : MonoBehaviour {
 
     private List<CellValue> cellValues;
     private List<Button> buttonList;
+    private bool isPlacingFlag;
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +39,12 @@ public class MinesweeperManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public bool ToggleFlag() {
+        isPlacingFlag = !isPlacingFlag;
+
+        return isPlacingFlag;
+    }
 
 
     private void InitializeGrid() {
@@ -109,52 +116,4 @@ public class MinesweeperManager : MonoBehaviour {
         return 0 <= index && index < cellValues.Count;
     }
 
-    /*
-    private bool IsTopBomb(int index) {
-        int adjacentIndex = index - gridLength;
-
-        return 0 <= adjacentIndex && adjacentIndex < cellValues.Count && cellValues[adjacentIndex] == CellValue.Bomb;
-    }
-
-    private bool IsTopLeftBomb(int index) {
-        int adjacentIndex = index - gridLength - 1;
-
-        return 0 <= adjacentIndex && adjacentIndex < cellValues.Count && cellValues[adjacentIndex] == CellValue.Bomb;
-    }
-
-    private bool IsTopRightBomb(int index) {
-        int adjacentIndex = index - gridLength + 1;
-
-        return 0 <= adjacentIndex && adjacentIndex < cellValues.Count && cellValues[adjacentIndex] == CellValue.Bomb;
-    }
-
-    private bool IsLeftBomb(int index) {
-        int adjacentIndex = index - 1;
-
-        return 0 <= adjacentIndex && adjacentIndex < cellValues.Count && cellValues[adjacentIndex] == CellValue.Bomb;
-    }
-
-    private bool IsRightBomb(int index) {
-        int adjacentIndex = index + 1;
-
-        return 0 <= adjacentIndex && adjacentIndex < cellValues.Count && cellValues[adjacentIndex] == CellValue.Bomb;
-    }
-
-    private bool IsBottomBomb(int index) {
-        int adjacentIndex = index + gridLength;
-
-        return 0 <= adjacentIndex && adjacentIndex < cellValues.Count && cellValues[adjacentIndex] == CellValue.Bomb;
-    }
-
-    private bool IsBottomLeftBomb(int index) {
-        int adjacentIndex = index + gridLength - 1;
-
-        return 0 <= adjacentIndex && adjacentIndex < cellValues.Count && cellValues[adjacentIndex] == CellValue.Bomb;
-    }
-
-    private bool IsBottomRightBomb(int index) {
-        int adjacentIndex = index + gridLength + 1;
-
-        return 0 <= adjacentIndex && adjacentIndex < cellValues.Count && cellValues[adjacentIndex] == CellValue.Bomb;
-    }*/
 }
