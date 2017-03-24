@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Minesweeper.unity
   - enabled: 1
     path: Assets/Scenes/Minesweeper3D.unity
+  - enabled: 1
+    path: Assets/Scenes/WebViewScene.unity

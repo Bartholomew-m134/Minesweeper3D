@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuBehavior : MonoBehaviour {
     public GameObject mainMenu;
@@ -22,6 +23,9 @@ public class MainMenuBehavior : MonoBehaviour {
         aboutMenu.SetActive(true);
     }
 
+    public void GoToWebView() {
+        SceneManager.LoadScene("WebViewScene");
+    }
     private void DisableAll() {
         mainMenu.SetActive(false);
         playMenu.SetActive(false);
