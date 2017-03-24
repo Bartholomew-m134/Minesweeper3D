@@ -17,7 +17,7 @@ public class MinesweeperManager : MonoBehaviour {
 
     private List<CellValue> cellValues;
     private List<Button> buttonList;
-    private bool isPlacingFlag;
+    public bool IsPlacingFlag { get; set; }
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +31,8 @@ public class MinesweeperManager : MonoBehaviour {
 
         var buttonList = GetComponentsInChildren<Button>();
         for (int i = 0; i < cellValues.Count; i++) {
-            buttonList[i].GetComponentInChildren<Text>().text = ((int)cellValues[i]).ToString();
+            buttonList[i].GetComponent<GameButtonBehavior>().buttonValue = ((int)cellValues[i]);
+            //buttonList[i].GetComponentInChildren<Text>().text = ((int)cellValues[i]).ToString();
         }
 	}
 	
@@ -41,9 +42,9 @@ public class MinesweeperManager : MonoBehaviour {
 	}
 
     public bool ToggleFlag() {
-        isPlacingFlag = !isPlacingFlag;
+        IsPlacingFlag = !IsPlacingFlag;
 
-        return isPlacingFlag;
+        return IsPlacingFlag;
     }
 
 
