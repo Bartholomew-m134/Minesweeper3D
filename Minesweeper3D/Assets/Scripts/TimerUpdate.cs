@@ -6,14 +6,19 @@ using UnityEngine.UI;
 public class TimerUpdate : MonoBehaviour {
     public Text timerText;
     private float time;
+    MinesweeperManager manager;
 	// Use this for initialization
 	void Start () {
         time = 0;
+        manager = GameObject.Find("Cube").GetComponent<MinesweeperManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        time += Time.deltaTime;
-        timerText.text = time.ToString("F2");
+        if (!manager.GameOver)
+        {
+            time += Time.deltaTime;
+            timerText.text = time.ToString("F2");
+        }
 	}
 }

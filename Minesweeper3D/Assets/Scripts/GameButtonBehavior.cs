@@ -11,7 +11,7 @@ public class GameButtonBehavior : MonoBehaviour {
 
     public void Start() {
 
-         manager = grid.GetComponent<MinesweeperManager>();
+        manager = grid.GetComponent<MinesweeperManager>();
     }
 
     public void UpButtonPress() {
@@ -42,14 +42,19 @@ public class GameButtonBehavior : MonoBehaviour {
             gameObject.GetComponent<Button>().image.overrideSprite = Resources.Load<Sprite>("flag");
         }
         else {
-             if (buttonValue == -1)
+             if (buttonValue == -1 && !manager.GameOver)
             {
                 gameObject.GetComponent<Button>().image.overrideSprite = Resources.Load<Sprite>("bomb");
+                gameObject.GetComponent<Button>().interactable = false;
+                GameObject.Find("Canvases").transform.Find("LoseCanvas").gameObject.SetActive(true);
+                manager.GameOver = true;
+                
             }
-            else
+            else if (!manager.GameOver)
             {
                 gameObject.GetComponentInChildren<Text>().text = buttonValue.ToString();
                 gameObject.GetComponent<Button>().image.overrideSprite = Resources.Load<Sprite>("minesweeperBlank");
+                gameObject.GetComponent<Button>().interactable = false;
             }
         }
     }
