@@ -11,6 +11,5 @@ public class AccelerometerBehavior : MonoBehaviour {
         if (Input.acceleration.magnitude > 2) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        Debug.Log(Input.acceleration.magnitude);
     }
 }
