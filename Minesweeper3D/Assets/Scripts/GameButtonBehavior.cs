@@ -46,7 +46,7 @@ public class GameButtonBehavior : MonoBehaviour {
             {
                 gameObject.GetComponent<Button>().image.overrideSprite = Resources.Load<Sprite>("bomb");
                 gameObject.GetComponent<Button>().interactable = false;
-                GameObject.Find("Canvases").transform.Find("LoseCanvas").gameObject.SetActive(true);
+                GameObject.Find("Canvases").transform.Find("GameOverCanvas").gameObject.SetActive(true);
                 manager.GameOver = true;
                 
             }
@@ -55,6 +55,12 @@ public class GameButtonBehavior : MonoBehaviour {
                 gameObject.GetComponentInChildren<Text>().text = buttonValue.ToString();
                 gameObject.GetComponent<Button>().image.overrideSprite = Resources.Load<Sprite>("minesweeperBlank");
                 gameObject.GetComponent<Button>().interactable = false;
+                manager.EmptySpaces--;
+                if (manager.EmptySpaces == 0) {
+                    manager.GameOver = true;
+                    GameObject.Find("Canvases").transform.Find("GameOverCanvas").gameObject.SetActive(true);
+                    GameObject.Find("Canvases").transform.Find("GameOverCanvas").transform.Find("GameOverText").GetComponent<Text>().text = "You win!";
+                }
             }
         }
     }

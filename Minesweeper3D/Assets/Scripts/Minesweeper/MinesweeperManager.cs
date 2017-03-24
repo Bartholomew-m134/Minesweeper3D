@@ -19,6 +19,7 @@ public class MinesweeperManager : MonoBehaviour {
     private List<Button> buttonList;
     public bool IsPlacingFlag { get; set; }
     public bool GameOver { get; set; }
+    public int EmptySpaces {get; set;}
 	// Use this for initialization
 	void Start () {
         var capacity = gridLength * gridLength;
@@ -26,7 +27,9 @@ public class MinesweeperManager : MonoBehaviour {
             capacity *= numberOfSides;
             bombNumber *= bombNumber;
         }
+
         GameOver = false;
+        EmptySpaces = capacity - bombNumber;
         cellValues = new List<CellValue>(capacity);
         InitializeGrid();
 
