@@ -16,6 +16,6 @@ public class LoadGame : MonoBehaviour {
 
    public void LoadPreviousGame() {
         LevelSerializer.SaveEntry sg = (LevelSerializer.SavedGames[LevelSerializer.PlayerName])[0];
-        LevelSerializer.LoadSavedLevel(sg.Data);
+        LevelSerializer.LoadSavedLevel(sg.Data, true);
     }
 }

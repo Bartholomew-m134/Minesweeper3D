@@ -13,12 +13,14 @@ public class GameButtonBehavior : MonoBehaviour {
     public void Start() {
 
         manager = grid.GetComponent<MinesweeperManager>();
-        if (!LevelSerializer.IsDeserializing) { 
+        if (!LevelSerializer.IsDeserializing)
+        {
             if (spriteImage == "")
             {
                 spriteImage = "minesweeperTile";
             }
         }
+        
         Debug.Log(spriteImage);
         //gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
     }
