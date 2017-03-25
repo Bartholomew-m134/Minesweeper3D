@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 61014145}
   - component: {fileID: 61014144}
   - component: {fileID: 61014143}
+  - component: {fileID: 61014147}
   m_Layer: 5
   m_Name: PlayMenu
   m_TagString: Untagged
@@ -443,6 +444,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &61014147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 61014142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a44dd6e98170bc449910ce723f81099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &227683208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,7 +1721,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_ForceModuleActive: 1
 --- !u!114 &1240089704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2117,6 +2129,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1432204766}
         m_MethodName: Print
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 61014147}
+        m_MethodName: LoadPreviousGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

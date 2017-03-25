@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class TimerUpdate : MonoBehaviour {
     public Text timerText;
-    private float time;
+    public float time;
     MinesweeperManager manager;
 	// Use this for initialization
 	void Start () {
-        time = 0;
         manager = GameObject.Find("Cube").GetComponent<MinesweeperManager>();
+        if (LevelSerializer.IsDeserializing)
+            return;
+        time = 0;
+        
 	}
 	
 	// Update is called once per frame

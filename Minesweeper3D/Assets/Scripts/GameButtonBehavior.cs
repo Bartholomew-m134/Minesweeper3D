@@ -8,10 +8,19 @@ public class GameButtonBehavior : MonoBehaviour {
     public GameObject grid;
     MinesweeperManager manager;
     public int buttonValue;
+    public string spriteImage;
 
     public void Start() {
 
         manager = grid.GetComponent<MinesweeperManager>();
+        if (!LevelSerializer.IsDeserializing) { 
+            if (spriteImage == "")
+            {
+                spriteImage = "minesweeperTile";
+            }
+        }
+        Debug.Log(spriteImage);
+        gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
     }
 
     public void UpButtonPress() {
@@ -31,20 +40,18 @@ public class GameButtonBehavior : MonoBehaviour {
         grid.transform.Rotate(0, -45, 0);
     }
 
-    public void FlagButtonPress() {
-        manager.ToggleFlag();
-
-    }
+ 
 
     public void PressGridButton() {
         if (manager.IsPlacingFlag)
         {
-            gameObject.GetComponent<Button>().image.overrideSprite = Resources.Load<Sprite>("flag");
+            spriteImage = "flag";
         }
         else {
              if (buttonValue == -1 && !manager.GameOver)
             {
-                gameObject.GetComponent<Button>().image.overrideSprite = Resources.Load<Sprite>("bomb");
+                //gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("bomb");
+                spriteImage = "bomb";
                 gameObject.GetComponent<Button>().interactable = false;
                 GameObject.Find("Canvases").transform.Find("GameOverCanvas").gameObject.SetActive(true);
                 manager.GameOver = true;
@@ -53,7 +60,8 @@ public class GameButtonBehavior : MonoBehaviour {
             else if (!manager.GameOver)
             {
                 gameObject.GetComponentInChildren<Text>().text = buttonValue.ToString();
-                gameObject.GetComponent<Button>().image.overrideSprite = Resources.Load<Sprite>("minesweeperBlank");
+                //gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("minesweeperBlank");
+                spriteImage = "minesweeperBlank";
                 gameObject.GetComponent<Button>().interactable = false;
                 manager.EmptySpaces--;
                 if (manager.EmptySpaces == 0) {
@@ -67,6 +75,6 @@ public class GameButtonBehavior : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
-	}
+        gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
+    }
 }
