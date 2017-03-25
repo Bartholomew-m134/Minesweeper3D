@@ -33,5 +33,9 @@ public class MainMenuBehavior : MonoBehaviour {
 
     }
 
+    void Start() {
+        //LevelSerializer.MaxGames = 1;
+    }
+
 
 }

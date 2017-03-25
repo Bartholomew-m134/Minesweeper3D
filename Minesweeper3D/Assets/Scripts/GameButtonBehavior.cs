@@ -22,21 +22,40 @@ public class GameButtonBehavior : MonoBehaviour {
         }
         
         Debug.Log(spriteImage);
-        //gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
+        gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
     }
+
+    public void UpButtonPress() {
+        grid.transform.Rotate(45, 0, 0);
+    }
+
+    public void DownButtonPress()
+    {
+        grid.transform.Rotate(-45, 0, 0);
+    }
+
+    public void RightButtonPress() {
+        grid.transform.Rotate(0, 45, 0);
+    }
+
+    public void LeftButtonPress() {
+        grid.transform.Rotate(0, -45, 0);
+    }
+
+ 
 
     public void PressGridButton() {
         if (manager.IsPlacingFlag)
         {
             spriteImage = "flag";
-            gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
+            gameObject.GetComponent<Button>().image.overrideSprite = Resources.Load<Sprite>(spriteImage);
         }
         else {
              if (buttonValue == -1 && !manager.GameOver)
             {
                 //gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("bomb");
                 spriteImage = "bomb";
-                gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
+                gameObject.GetComponent<Button>().image.overrideSprite = Resources.Load<Sprite>(spriteImage);
                 gameObject.GetComponent<Button>().interactable = false;
                 GameObject.Find("Canvases").transform.Find("GameOverCanvas").gameObject.SetActive(true);
                 manager.GameOver = true;
@@ -47,7 +66,7 @@ public class GameButtonBehavior : MonoBehaviour {
                 gameObject.GetComponentInChildren<Text>().text = buttonValue.ToString();
                 //gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("minesweeperBlank");
                 spriteImage = "minesweeperBlank";
-                gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
+                gameObject.GetComponent<Button>().image.overrideSprite = Resources.Load<Sprite>(spriteImage);
                 gameObject.GetComponent<Button>().interactable = false;
                 manager.EmptySpaces--;
                 if (manager.EmptySpaces == 0) {

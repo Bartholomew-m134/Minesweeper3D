@@ -1166,6 +1166,7 @@ GameObject:
   - component: {fileID: 239260226}
   - component: {fileID: 239260231}
   - component: {fileID: 239260233}
+  - component: {fileID: 239260232}
   m_Layer: 5
   m_Name: HUD Canvas
   m_TagString: Untagged
@@ -1274,6 +1275,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061e72a0a474ab4abcc9355aaebc294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &239260232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 239260225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6fd92df3c974ed690d61989eb183ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsDeserializing: 0
+  _id: d02abae1-5e36-4742-a70f-3bd6baddf80d
+  classId: 4c0ade7a-9f2d-4ef9-bf1a-064aacf63cb5
+  StoreAllComponents: 1
+  Components: []
 --- !u!114 &239260233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8031,6 +8048,10 @@ MonoBehaviour:
     Id: 48bfa960-d3e8-4b5c-9dea-a626f25d0b03
   - gameObject: {fileID: 442971746}
     Id: b8ec30bd-8bbc-49ec-a7c4-80e464eb5a45
+  - gameObject: {fileID: 239260225}
+    Id: d02abae1-5e36-4742-a70f-3bd6baddf80d
+  - gameObject: {fileID: 2139202755}
+    Id: 0d1bb282-4e8e-45dc-b68c-7cbf513c62c2
 --- !u!1 &1997475136
 GameObject:
   m_ObjectHideFlags: 0
@@ -8128,6 +8149,7 @@ GameObject:
   - component: {fileID: 2139202759}
   - component: {fileID: 2139202758}
   - component: {fileID: 2139202757}
+  - component: {fileID: 2139202760}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -8239,3 +8261,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2139202755}
+--- !u!114 &2139202760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2139202755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6fd92df3c974ed690d61989eb183ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsDeserializing: 0
+  _id: 0d1bb282-4e8e-45dc-b68c-7cbf513c62c2
+  classId: 8e4a27cf-4fa4-4637-9eec-b56309d1822a
+  StoreAllComponents: 1
+  Components: []
