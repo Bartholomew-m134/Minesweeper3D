@@ -11,7 +11,7 @@ public class MinesweeperManager : MonoBehaviour {
         Flag = -2, Bomb, Zero, One, Two, Three, Four, Five, Six, Seven, Eight
     }
 
-    private int numberOfSides = 6;
+    private int numberOfSides = 4;
     private int gridLength = 5;
     private int bombNumber = 5;
 
@@ -97,58 +97,32 @@ public class MinesweeperManager : MonoBehaviour {
     private List<int> GetAdjacentIndexes(int centerIndex) {
         List<int> adjIndexes = new List<int>();
 
-        bool isLeftEdge = centerIndex < gridLength;
-        bool isRightEdge = centerIndex >= (cellValues.Count - gridLength);
-        bool isTopEdge = centerIndex % gridLength == 0;
-        bool isBottomEdge = ((centerIndex - 4) % gridLength == 0) && centerIndex != 0;
+        bool isTopEdge = (centerIndex % (gridLength * gridLength)) < gridLength;
+        bool isBottomEdge = (centerIndex % (gridLength * gridLength)) >= (gridLength * gridLength - gridLength) && centerIndex != 0;
+        bool isLeftEdge = centerIndex % gridLength == 0;
+        bool isRightEdge = ((centerIndex + 1) % gridLength == 0) && centerIndex != 0;
 
-        //if (!Is3D || !(isLeftEdge || isRightEdge || isTopEdge || isBottomEdge)) {
-            int beginningRow = isLeftEdge ? 0 : -1;
-            int endingRow = isRightEdge ? 1 : 2;
+        int beginningRow = isTopEdge ? 0 : -1;
+        int endingRow = isBottomEdge ? 1 : 2;
 
-            int beginningColumn = isTopEdge ? 0 : -1;
-            int endingColumn = isBottomEdge ? 1 : 2;
+        int beginningColumn = isLeftEdge && !Is3D ? 0 : -1;
+        int endingColumn = isRightEdge && !Is3D ? 1 : 2;
 
         for (int row = beginningRow; row < endingRow; row++) {
             for (int column = beginningColumn; column < endingColumn; column++) {
                 int adjIndex = centerIndex + (row * gridLength) + column;
 
-                    if (IsWithinBounds(adjIndex)) {
-                        adjIndexes.Add(adjIndex);
-                    }
-                }
-            }
-        //} 
-        
-        if (Is3D) {
-            switch (centerIndex) {
-                case 0:
-                    adjIndexes.Add(79);
-                    adjIndexes.Add(84);
-                    adjIndexes.Add(120);
-                    adjIndexes.Add(121);
-                    break;
-            }
-        }
-
-        /*for (int row = -1; row < 2; row++) {
-            for (int column = -1; column < 2; column++) {
-                //int columnAdjustment = column + (isRightEdge && column == 1 ? gridLength * gridLength - gridLength + 1: 0) - (isLeftEdge && column == -1 ? gridLength * gridLength - gridLength + 1 : 0);
-                int columnAdjustment = column + (isRightEdge && column == 1 ? gridLength * gridLength - gridLength + 1 : 0);
-                int adjIndex = centerIndex + (row * gridLength) + columnAdjustment;
-
-                if (IsWithinBounds(adjIndex)) {
-                    adjIndexes.Add(adjIndex);
+                if (isLeftEdge && column == -1) {
+                    adjIndex -= gridLength * gridLength - gridLength;
                 }
 
-                Debug.Log((adjIndex + cellValues.Count) % cellValues.Count);
-                adjIndexes.Add((adjIndex + cellValues.Count) % cellValues.Count);
-            }
-        }*/
+                if (isRightEdge && column == 1) {
+                    adjIndex += gridLength * gridLength - gridLength;
+                }
 
-        if(centerIndex == 0) {
-            foreach(var item in adjIndexes)
-            Debug.Log(item);
+                adjIndex = (adjIndex + cellValues.Count) % cellValues.Count;
+                adjIndexes.Add(adjIndex);
+            }
         }
 
         return adjIndexes;
