@@ -20,7 +20,7 @@ public class GameButtonBehavior : MonoBehaviour {
             }
         }
         Debug.Log(spriteImage);
-        gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
+        //gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
     }
 
     public void UpButtonPress() {
@@ -46,12 +46,14 @@ public class GameButtonBehavior : MonoBehaviour {
         if (manager.IsPlacingFlag)
         {
             spriteImage = "flag";
+            gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
         }
         else {
              if (buttonValue == -1 && !manager.GameOver)
             {
                 //gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("bomb");
                 spriteImage = "bomb";
+                gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
                 gameObject.GetComponent<Button>().interactable = false;
                 GameObject.Find("Canvases").transform.Find("GameOverCanvas").gameObject.SetActive(true);
                 manager.GameOver = true;
@@ -62,6 +64,7 @@ public class GameButtonBehavior : MonoBehaviour {
                 gameObject.GetComponentInChildren<Text>().text = buttonValue.ToString();
                 //gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("minesweeperBlank");
                 spriteImage = "minesweeperBlank";
+                gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
                 gameObject.GetComponent<Button>().interactable = false;
                 manager.EmptySpaces--;
                 if (manager.EmptySpaces == 0) {
