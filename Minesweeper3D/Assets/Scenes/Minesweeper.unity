@@ -2918,7 +2918,6 @@ GameObject:
   m_Component:
   - component: {fileID: 893496754}
   - component: {fileID: 893496753}
-  - component: {fileID: 893496755}
   m_Layer: 0
   m_Name: Save Game Manager
   m_TagString: Untagged
@@ -2952,20 +2951,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &893496755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 893496752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 810dd5fbf04b77942bbc0a93cdff1fdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paused: 0
-  pausedGUI: {fileID: 0}
-  gameName: Your Game
 --- !u!224 &914700461 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224556027280739238, guid: d5cf7236dc85ccf4ca44fa3c236b48ca,
