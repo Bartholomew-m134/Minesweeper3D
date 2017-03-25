@@ -25,25 +25,6 @@ public class GameButtonBehavior : MonoBehaviour {
         //gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
     }
 
-    public void UpButtonPress() {
-        grid.transform.Rotate(45, 0, 0);
-    }
-
-    public void DownButtonPress()
-    {
-        grid.transform.Rotate(-45, 0, 0);
-    }
-
-    public void RightButtonPress() {
-        grid.transform.Rotate(0, 45, 0);
-    }
-
-    public void LeftButtonPress() {
-        grid.transform.Rotate(0, -45, 0);
-    }
-
- 
-
     public void PressGridButton() {
         if (manager.IsPlacingFlag)
         {
