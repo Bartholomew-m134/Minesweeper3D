@@ -16,7 +16,9 @@ public class SaveGameOnBack : MonoBehaviour {
 	}
 
     public void SaveGame() {
+        LevelSerializer.PlayerName = "player1";
         LevelSerializer.SaveGame("Your Game");
+        Debug.Log("Saved game");
         SceneManager.LoadScene("MainMenu");
     }
 }

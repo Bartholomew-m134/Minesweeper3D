@@ -1865,7 +1865,6 @@ GameObject:
   - component: {fileID: 442971749}
   - component: {fileID: 442971748}
   - component: {fileID: 442971747}
-  - component: {fileID: 442971750}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1918,22 +1917,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &442971750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 442971746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd6fd92df3c974ed690d61989eb183ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsDeserializing: 0
-  _id: b8ec30bd-8bbc-49ec-a7c4-80e464eb5a45
-  classId: 2b3cd1c6-a895-4e1f-af7c-8bcf0038222e
-  StoreAllComponents: 1
-  Components: []
 --- !u!1 &464668165
 GameObject:
   m_ObjectHideFlags: 0
@@ -7512,7 +7495,6 @@ GameObject:
   - component: {fileID: 1767539089}
   - component: {fileID: 1767539088}
   - component: {fileID: 1767539087}
-  - component: {fileID: 1767539092}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7588,22 +7570,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1767539092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1767539086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd6fd92df3c974ed690d61989eb183ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsDeserializing: 0
-  _id: 48bfa960-d3e8-4b5c-9dea-a626f25d0b03
-  classId: 040a56e7-d5a2-440e-9718-7ef73c7f62c6
-  StoreAllComponents: 1
-  Components: []
 --- !u!1 &1776249207
 GameObject:
   m_ObjectHideFlags: 0
@@ -8043,8 +8009,6 @@ MonoBehaviour:
     Id: 887e66eb-f980-4d6d-bc8f-bb457aec977b
   - gameObject: {fileID: 1767539086}
     Id: 48bfa960-d3e8-4b5c-9dea-a626f25d0b03
-  - gameObject: {fileID: 442971746}
-    Id: b8ec30bd-8bbc-49ec-a7c4-80e464eb5a45
   - gameObject: {fileID: 239260225}
     Id: d02abae1-5e36-4742-a70f-3bd6baddf80d
   - gameObject: {fileID: 2139202755}

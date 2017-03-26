@@ -10,14 +10,14 @@ public class PlayMenuBehavior : MonoBehaviour {
 
     public void LaunchNew2DGame() {
         if (canLoad) {
-            SceneManager.LoadSceneAsync("Minesweeper", LoadSceneMode.Single);
+            SceneManager.LoadScene("Minesweeper", LoadSceneMode.Single);
             canLoad = false;
         }
     }
 
     public void LaunchNew3DGame() {
      if (canLoad) { 
-        SceneManager.LoadSceneAsync("Minesweeper3D", LoadSceneMode.Single);
+        SceneManager.LoadScene("Minesweeper3D", LoadSceneMode.Single);
         canLoad = false;
     }
 }
