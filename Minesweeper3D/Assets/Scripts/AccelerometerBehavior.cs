@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class AccelerometerBehavior : MonoBehaviour {
 
+    bool canLoad = true;
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.acceleration.magnitude > 2) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
+        if (Input.acceleration.magnitude > 2 && canLoad) {
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+
+            canLoad = false;
         }
     }
 }

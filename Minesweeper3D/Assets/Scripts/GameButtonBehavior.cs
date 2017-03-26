@@ -21,7 +21,7 @@ public class GameButtonBehavior : MonoBehaviour {
             }
         }
         
-        Debug.Log(spriteImage);
+        //Debug.Log(spriteImage);
         gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
     }
 

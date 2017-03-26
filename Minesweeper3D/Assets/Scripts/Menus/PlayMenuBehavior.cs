@@ -6,12 +6,19 @@ using UnityEngine.SceneManagement;
 public class PlayMenuBehavior : MonoBehaviour {
 
     public GameObject playMenu;
+    private bool canLoad = true;
 
     public void LaunchNew2DGame() {
-        SceneManager.LoadScene("Minesweeper");
+        if (canLoad) {
+            SceneManager.LoadSceneAsync("Minesweeper", LoadSceneMode.Single);
+            canLoad = false;
+        }
     }
 
     public void LaunchNew3DGame() {
-        SceneManager.LoadScene("Minesweeper3D");
+     if (canLoad) { 
+        SceneManager.LoadSceneAsync("Minesweeper3D", LoadSceneMode.Single);
+        canLoad = false;
     }
+}
 }
