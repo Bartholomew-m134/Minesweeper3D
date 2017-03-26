@@ -80,6 +80,6 @@ public class GameButtonBehavior : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
+        //gameObject.GetComponent<Button>().image.sprite = Resources.Load<Sprite>(spriteImage);
     }
 }
